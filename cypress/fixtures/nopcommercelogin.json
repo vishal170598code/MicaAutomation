@@ -1,0 +1,18 @@
+[
+    {
+        "email" : "admin@yourstore1.com",
+        "password" : "admin",
+        "expected" : "Login was unsuccessful. Please correct the errors and try again.No customer account found"
+    },
+
+    {
+        "email" : "admin@yourstore.com",
+        "password" : "admin12345",
+        "expected" : "Login was unsuccessful. Please correct the errors and try again.The credentials provided are incorrect"
+    },
+    {
+        "email" : "admin@yourstore.com",
+        "password" : "admin",
+        "expected" : "Dashboard"
+    }
+]

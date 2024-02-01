@@ -1,0 +1,35 @@
+{
+    "addnewuserwithvaliddata": {
+        "Username": "Vishal Hadiyal Test User",
+        "EmailID": "vishalTest12@gmail.com",
+        "ContactNO": "9157006370",
+        "AddUserSuccessMessage" : "Data saved successfully"
+    },
+
+    "checkDuplicateData": {
+        "Username": "Vishal Hadiyal Test User",
+        "EmailID": "vishalTest12@gmail.com",
+        "ContactNO": "9157006370",
+        "DuplicateValidationMessage" : "Email ID is already exists"
+    },
+
+    "DeleteUser": {
+        "DeleteUserMessage" : "Data Deleted successfully"
+    },
+
+    "editAlldatas": {
+        "Username": "Bhavesh Hadiyal",
+        "EmailID": "bhaveshTest12@gmail.com",
+        "ContactNO": "9257006370",
+        "UserDataUpdateMessage" : "Data Updated successfully"
+    },
+
+    "getNumberofRowsAndColumn" : {
+        "Rows" : "15",
+        "Column" : "1"
+    },
+
+    "FindRecords": {
+        "RecordsEmailID" : "vhhadiyalefive528@gmail.com"
+    }
+}
