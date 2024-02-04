@@ -105,7 +105,7 @@ describe("testUserMaster" , () => {
         })
     })
     
-    it.only("DataDrivenUserMaster" , () => {
+    it("DataDrivenUserMaster" , () => {
 
         cy.fixture("MicaUserMasterDataDriven.json").then((DDT) => {
             
@@ -127,6 +127,37 @@ describe("testUserMaster" , () => {
                 cy.wait(5000)
                 UM.comanMessage(data.ToMessage)
             })
+        })
+    })
+
+    it.only("SaveandEnterDataTestCases" , () => {
+
+        cy.fixture("MicaUserMaster.json").then((data) => {
+            const UM = new UserMaster();
+
+            UM.hoverOnSystemMasterDropdown()
+            UM.clickOnUserMasterOption()
+            UM.clickaddButtonOnUserMaster()
+            UM.clickSaveUserButton()
+            UM.saveandEnterTosterMessage(data.saveandEnterTest.EnterUserNameMessage)
+            UM.enterUserName(data.saveandEnterTest.Username)
+            UM.clickSaveUserButton()
+            UM.saveandEnterTosterMessage(data.saveandEnterTest.EnterUserEmailIDMessage)
+            UM.enterEmailID(data.addnewuserwithvaliddata.EmailID)
+            UM.clickSaveUserButton()
+            UM.saveandEnterTosterMessage(data.saveandEnterTest.EnterContactNumberMessage)
+            UM.enterContactNo(data.addnewuserwithvaliddata.ContactNO)
+            UM.clickSaveUserButton()
+            UM.saveandEnterTosterMessage(data.saveandEnterTest.SelectUserTypeMessage)
+            UM.clickOnUserTypeDropdown()
+            UM.selectAdminOption()
+            UM.clickSaveUserButton()
+            UM.saveandEnterTosterMessage(data.saveandEnterTest.SelectRoleType)
+            UM.clickOnRoleTypeDropdown()
+            UM.selectAdminRole()
+            UM.clickSaveUserButton()
+            cy.wait(5000)
+            UM.comanMessage(data.saveandEnterTest.AddUserSuccessMessage)
         })
     })
 })

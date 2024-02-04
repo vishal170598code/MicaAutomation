@@ -31,5 +31,17 @@
 
     "FindRecords": {
         "RecordsEmailID" : "vhhadiyalefive528@gmail.com"
+    },
+
+    "saveandEnterTest": {
+        "Username": "Vishal Hadiyal SV",
+        "EmailID": "vishalTestsv12@gmail.com",
+        "ContactNO": "9157006370",
+        "AddUserSuccessMessage" : "Data saved successfully",
+        "EnterUserNameMessage" : "Please Enter Name",
+        "EnterUserEmailIDMessage" : "Please Enter EmailID",
+        "EnterContactNumberMessage" : "Please Enter Contact Number",
+        "SelectUserTypeMessage" : "Please Select User Type",
+        "SelectRoleType" : "Please Select Role Type"
     }
 }

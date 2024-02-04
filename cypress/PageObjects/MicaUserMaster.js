@@ -16,6 +16,7 @@ class UserMaster{
     clickDeleteButton = ":nth-child(1) > .sorting_1 > .delete_user > .fas"
     clickConfirmationPopupDeleteButton = ".swal2-confirm"
     Message = ".d-flex > .flex-grow-1"
+    tosterMessage = ".toast-body"
     clickEditButton = ":nth-child(1) > .sorting_1 > .me-2 > .edituser_btn > .fas"
     getAllRows = "table[id = 'user_table'] > tbody > tr"
     getAllColumn = "table[id = 'user_table']> thead > tr"
@@ -92,6 +93,15 @@ class UserMaster{
     comanMessage(COMMESS)
     {
         cy.get(this.Message).contains(COMMESS)
+    }
+    saveandEnterTosterMessage(SAETTM)
+    {
+        cy.get(this.tosterMessage)
+        .should("be.visible")
+        .invoke("text")
+        .then((text) => {
+            cy.log("Text of the visible element :-" , text)
+        })
     }
 
     clickEditButtonforUpdateUserData()
