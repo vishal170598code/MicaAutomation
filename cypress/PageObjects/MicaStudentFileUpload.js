@@ -1,5 +1,6 @@
 /// <reference types="cypress" />
 
+
 class StudentUpload{
     hoverOnMasterDropdown = "#master"
     clickStudent = "#student_master"
@@ -15,6 +16,21 @@ class StudentUpload{
     deleteBatchName = ".odd > .sorting_1"
     deleteBatch = ".odd > :nth-child(1) > .delete_confirm > .fas"
     deletePermitionPopup = ".swal2-confirm"
+
+    // Download Temlate
+    DownloadTemp = "#downloadtemplate"
+
+    // Download Excel File
+    DownExcel = "#excelBtn"
+
+    // Delete Single Student
+    GetStudentName = ":nth-child(1) > .text-center > #deletebulkuploadbtn > .fas"
+    DeleteUser = "#deletebulkuploadbtn"
+    AllowDeletePermision = ".swal2-confirm"
+    getNumberOfStudent = "#detail-table > tbody > tr"
+
+    // Upload and Delete All student
+    getAllUserElement = "table > tbody > tr"
 
 
     hoverOnMasterDROP()
@@ -67,6 +83,7 @@ class StudentUpload{
         })
     }
 
+    // Get Delete Batch Name
     deleteStudentBatchName()
     {
         cy.get(this.deleteBatchName)
@@ -95,6 +112,50 @@ class StudentUpload{
         .then((text) => {
             cy.log("Text of the visible element :-" , text)
         })
+    }
+
+    // Download Temlate
+    downloadTempalte()
+    {
+        cy.get(this.DownloadTemp).click()
+    }
+
+    // Download Excel File
+    downloadExcel()
+    {
+        cy.get(this.DownExcel).click()
+    }
+
+    // Delete Single Student
+    getDeletedStudentName()
+    {
+        cy.get(this.GetStudentName)
+        .should("be.visible")
+        .invoke("text")
+        .then((text) => {
+            cy.log("Text of the visible element :-" , text)
+        })
+    }
+
+    clickDeleteButton()
+    {
+        cy.get(this.DeleteUser).click()
+    }
+
+    clickDeleteButtonOnPermission()
+    {
+        cy.get(this.AllowDeletePermision).click()
+    }
+
+    getLengthNumberOfStudent()
+    {
+        cy.get(this.getNumberOfStudent).should("have.length" , 4)
+    }
+
+    // Upload and Delete All student
+    getAlltheuserfromtable()
+    {
+        cy.get(this.getAllUserElement)
     }
 }
 
