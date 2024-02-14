@@ -1,0 +1,19 @@
+{
+    "addNewCourseGroupWIthValidData":
+    {
+        "CourseGroupName" : "Test Vishal First Course Group",
+        "CourseGroupShortName" : "TVFCG"
+    },
+
+    "UpdateCourseGroupWIthValidData":
+    {
+        "CourseGroupName" : "Test Vishal First Course Group Update",
+        "CourseGroupShortName" : "TVFCGU"
+    },
+
+    "DeleteRecordSearch":
+    {
+        "filterRecords" : "Test Vishal Hadiyal Course Group"
+    }
+    
+}
