@@ -8,14 +8,13 @@ describe("testStudentMasterBulkUpload", () => {
   
     beforeEach(() => {
       cy.Login("admin@emergingfive.com", "admin");
+      cy.MasterDropdownHoverAndClick(("#course_group_master"));
     });
 
     it("addNewCourseGroup" , () => {
         cy.fixture("MicaCourseGroupMaster.json").then((data) => {
             const MCGM = new CourseGroupMaster();
 
-            MCGM.hoverOnMasterDropdown()
-            MCGM.selectCourseGroupMasterOption()
             MCGM.clickAddButton()
             MCGM.enterCourseGroupName(data.addNewCourseGroupWIthValidData.CourseGroupName)
             MCGM.enterShortCourseGroupName(data.addNewCourseGroupWIthValidData.CourseGroupShortName)
@@ -29,8 +28,6 @@ describe("testStudentMasterBulkUpload", () => {
       cy.fixture("MicaCourseGroupMaster.json").then((data) => {
           const MCGM = new CourseGroupMaster();
 
-          MCGM.hoverOnMasterDropdown()
-          MCGM.selectCourseGroupMasterOption()
           MCGM.searchRecord()
           cy.wait(3000)
           MCGM.clickExcelButton()
@@ -41,8 +38,6 @@ describe("testStudentMasterBulkUpload", () => {
       cy.fixture("MicaCourseGroupMaster.json").then((data) => {
           const MCGM = new CourseGroupMaster();
 
-          MCGM.hoverOnMasterDropdown()
-          MCGM.selectCourseGroupMasterOption()
           MCGM.clickEditButton()
           MCGM.enterCourseGroupName(data.UpdateCourseGroupWIthValidData.CourseGroupName)
           MCGM.enterShortCourseGroupName(data.UpdateCourseGroupWIthValidData.CourseGroupShortName)
@@ -56,8 +51,6 @@ describe("testStudentMasterBulkUpload", () => {
       cy.fixture("MicaCourseGroupMaster.json").then((data) => {
           const MCGM = new CourseGroupMaster();
 
-          MCGM.hoverOnMasterDropdown()
-          MCGM.selectCourseGroupMasterOption()
           MCGM.clickEditButton()
           MCGM.clickActiveCheckBox()
           MCGM.clickSaveButton()
@@ -66,17 +59,23 @@ describe("testStudentMasterBulkUpload", () => {
       })
     })
 
-    it.only("DeleteRecord" , () => {
+    it("DeleteRecord" , () => {
       cy.fixture("MicaCourseGroupMaster.json").then((data) => {
           const MCGM = new CourseGroupMaster();
 
-          MCGM.hoverOnMasterDropdown()
-          MCGM.selectCourseGroupMasterOption()
           MCGM.inputInSearchBar(data.DeleteRecordSearch.filterRecords)
           MCGM.clickDeleteButton()
           MCGM.clickConfirmDeleteButton()
           MCGM.successMessage()
           MCGM.getTestinGrid()
+      })
+    })
+
+    it.only("GetAllRecords" , () => {
+      cy.fixture("MicaCourseGroupMaster.json").then((data) => {
+          const MCGM = new CourseGroupMaster();
+          let Records = MCGM.getAllRecords()
+          console.table(Records)
       })
     })
 })

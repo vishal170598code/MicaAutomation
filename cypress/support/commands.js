@@ -27,9 +27,18 @@
 /// <reference types="cypress" />
 
 
+// Login Command
+
 Cypress.Commands.add("Login" , (Username , Password) => {
     cy.visit("/")
     cy.get("#username").clear().type(Username)
     cy.get("#password").clear().type(Password)
     cy.get("#login").click()
 })
+
+// Hover and clicks command.
+
+Cypress.Commands.add("MasterDropdownHoverAndClick", (targetId) => {
+    cy.get("#master").trigger("mouseover");
+    cy.get(targetId).click()
+});

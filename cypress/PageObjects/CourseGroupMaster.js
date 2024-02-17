@@ -5,7 +5,6 @@ class CourseGroupMaster{
 
     // Add New Course Group
     masterDropdown = "#master"
-    dropdownOption = "#course_group_master"
     addButton = "#addBtn"
     inputCourseGroupName = "#coursegroupname"
     inputShortCourseGroupName = "#shortname"
@@ -31,9 +30,8 @@ class CourseGroupMaster{
     buttonConfirmDelete = ".swal2-confirm"
     textGrid = ".dataTables_empty"
 
-
-
-
+    // Get all the recodes and print
+    grtTable = "[id='course_group_table'] > tbody > tr"
 
 
 
@@ -42,11 +40,6 @@ class CourseGroupMaster{
     hoverOnMasterDropdown()
     {
         cy.get(this.masterDropdown).trigger("mouseover")
-    }
-
-    selectCourseGroupMasterOption()
-    {
-        cy.get(this.dropdownOption).click()
     }
 
     clickAddButton()
@@ -141,6 +134,21 @@ class CourseGroupMaster{
     getTestinGrid()
     {
         cy.get(this.textGrid).should("have.text" , "No matching records found")
+    }
+
+
+    // Get all the recodes and print
+
+    getAllRecords() {
+        const records = [];
+        cy.get(this.grtTable).each(($row) => {
+            const rowData = [];
+            cy.wrap($row).find("th, td").each(($cell) => {
+                rowData.push($cell.text());
+            });
+            records.push(rowData);
+        });
+        return records;
     }
 }
 
