@@ -9,6 +9,7 @@ describe("testUserMaster" , () => {
 
     beforeEach(() => {
         cy.Login("admin@emergingfive.com" , "admin")
+        cy.SystemMasterDropdownHoverAndClick(("#user_master"))
     })
 
     it("addNewUserWithValidData" , () => {
@@ -16,8 +17,6 @@ describe("testUserMaster" , () => {
         cy.fixture("MicaUserMaster.json").then((data) => {
             const UM = new UserMaster();
 
-            UM.hoverOnSystemMasterDropdown()
-            UM.clickOnUserMasterOption()
             UM.clickaddButtonOnUserMaster()
             UM.enterUserName(data.addnewuserwithvaliddata.Username)
             UM.enterEmailID(data.addnewuserwithvaliddata.EmailID)
@@ -37,8 +36,6 @@ describe("testUserMaster" , () => {
         cy.fixture("MicaUserMaster.json").then((data) => {
             const UM = new UserMaster();
 
-            UM.hoverOnSystemMasterDropdown()
-            UM.clickOnUserMasterOption()
             UM.clickaddButtonOnUserMaster()
             UM.enterUserName(data.checkDuplicateData.Username)
             UM.enterEmailID(data.checkDuplicateData.EmailID)
@@ -57,8 +54,6 @@ describe("testUserMaster" , () => {
         cy.fixture("MicaUserMaster.json").then((data) => {
             const UM = new UserMaster();
 
-            UM.hoverOnSystemMasterDropdown()
-            UM.clickOnUserMasterOption()
             UM.clickUserDeleteButton()
             UM.clickDeleteButtonOnConfirmationPopup()
             UM.comanMessage(data.DeleteUser.DeleteUserMessage)
@@ -70,8 +65,6 @@ describe("testUserMaster" , () => {
         cy.fixture("MicaUserMaster.json").then((data) => {
             const UM = new UserMaster();
 
-            UM.hoverOnSystemMasterDropdown()
-            UM.clickOnUserMasterOption()
             UM.clickEditButtonforUpdateUserData()
             UM.enterUserName(data.editAlldatas.Username)
             UM.enterEmailID(data.editAlldatas.EmailID)
@@ -87,8 +80,6 @@ describe("testUserMaster" , () => {
         cy.fixture("MicaUserMaster.json").then((data) => {
             const UM = new UserMaster();
 
-            UM.hoverOnSystemMasterDropdown()
-            UM.clickOnUserMasterOption()
             UM.ceptureAllRows(data.getNumberofRowsAndColumn.Rows)
             UM.cpatureAllColumn(data.getNumberofRowsAndColumn.Column)
         })
@@ -99,8 +90,6 @@ describe("testUserMaster" , () => {
         cy.fixture("MicaUserMaster.json").then((data) => {
             const UM = new UserMaster();
 
-            UM.hoverOnSystemMasterDropdown()
-            UM.clickOnUserMasterOption()
             UM.getFixRecords(data.FindRecords.RecordsEmailID)
         })
     })
@@ -113,8 +102,6 @@ describe("testUserMaster" , () => {
             DDT.forEach((data) => {
                 const UM = new UserMaster();
 
-                UM.hoverOnSystemMasterDropdown()
-                UM.clickOnUserMasterOption()
                 UM.clickaddButtonOnUserMaster()
                 UM.enterUserName(data.Name)
                 UM.enterEmailID(data.EmailID)
@@ -130,13 +117,11 @@ describe("testUserMaster" , () => {
         })
     })
 
-    it.only("SaveandEnterDataTestCases" , () => {
+    it("SaveandEnterDataTestCases" , () => {
 
         cy.fixture("MicaUserMaster.json").then((data) => {
             const UM = new UserMaster();
 
-            UM.hoverOnSystemMasterDropdown()
-            UM.clickOnUserMasterOption()
             UM.clickaddButtonOnUserMaster()
             UM.clickSaveUserButton()
             UM.saveandEnterTosterMessage(data.saveandEnterTest.EnterUserNameMessage)

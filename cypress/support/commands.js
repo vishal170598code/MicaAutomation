@@ -38,6 +38,11 @@ Cypress.Commands.add("Login" , (Username , Password) => {
 
 // Hover and clicks command.
 
+Cypress.Commands.add("SystemMasterDropdownHoverAndClick", (targetId) => {
+    cy.get("#system_master").trigger("mouseover");
+    cy.get(targetId).click()
+});
+
 Cypress.Commands.add("MasterDropdownHoverAndClick", (targetId) => {
     cy.get("#master").trigger("mouseover");
     cy.get(targetId).click()

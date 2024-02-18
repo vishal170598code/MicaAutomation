@@ -2,8 +2,6 @@
 
 class UserMaster{
 
-    hoverOnSystemMaster = "span[id='system_master'] span[class='menu-title']"
-    clickUserMaster = "a[id='user_master'] span[class='menu-title']"
     addUserButton = "#addBtn"
     userName = "#username"
     emailID = "#emailid"
@@ -25,15 +23,6 @@ class UserMaster{
     CaptureSpecificDataIntoTheTable = "table[id = 'user_table'] > tbody > tr:nth-child(4) > td:nth-child(4)"
  
 
-    hoverOnSystemMasterDropdown()
-    {
-        cy.get(this.hoverOnSystemMaster).trigger("mouseover")
-    }
-
-    clickOnUserMasterOption()
-    {
-        cy.get(this.clickUserMaster).click()
-    }
 
     clickaddButtonOnUserMaster()
     {
