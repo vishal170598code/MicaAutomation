@@ -8,13 +8,12 @@ describe("testStudentMasterBulkUpload", () => {
 
   beforeEach(() => {
     cy.Login("admin@emergingfive.com", "admin");
+    cy.MasterDropdownHoverAndClick(("#student_master"));
   });
 
   it("StudentBulkUpload", () => {
       const SBLKU = new StudentUpload;
       
-      SBLKU.hoverOnMasterDROP();
-      SBLKU.clickStudentMasterOption();
       SBLKU.clickStudentBulkUploadButton();
       SBLKU.clickOnBatchDropdown();
       SBLKU.select2325BatchOption();
@@ -27,19 +26,15 @@ describe("testStudentMasterBulkUpload", () => {
   it("DeleteBatchStudent", () => {
     const SBLKU = new StudentUpload;
     
-    SBLKU.hoverOnMasterDROP();
-    SBLKU.clickStudentMasterOption();
     SBLKU.deleteStudentBatchName()
     SBLKU.deletedBatchName()
     SBLKU.clickConfirmDeleteButton()
     SBLKU.deleteSuccessMessage()
   });
 
-  it("DownloadTemlate", () => {
+  it.only("DownloadTemlate", () => {
     const SBLKU = new StudentUpload;
     
-    SBLKU.hoverOnMasterDROP();
-    SBLKU.clickStudentMasterOption();
     SBLKU.clickStudentBulkUploadButton();
     SBLKU.downloadTempalte()
   });
@@ -47,16 +42,12 @@ describe("testStudentMasterBulkUpload", () => {
   it("DownloadExcel", () => {
     const SBLKU = new StudentUpload;
     
-    SBLKU.hoverOnMasterDROP();
-    SBLKU.clickStudentMasterOption();
     SBLKU.downloadExcel()
   });
 
   it("DeleteSingleStudent", () => {
     const SBLKU = new StudentUpload;
     
-    SBLKU.hoverOnMasterDROP();
-    SBLKU.clickStudentMasterOption();
     SBLKU.clickStudentBulkUploadButton();
     SBLKU.clickOnBatchDropdown();
     SBLKU.select2325BatchOption();

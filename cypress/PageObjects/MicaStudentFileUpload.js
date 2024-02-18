@@ -2,8 +2,6 @@
 
 
 class StudentUpload{
-    hoverOnMasterDropdown = "#master"
-    clickStudent = "#student_master"
     clickSTDBulkUploadBtn = "#bulkuploadbtn"
     clickBatchDropdown = "span[role='combobox']"
     select20232025BatchOption = ".k-list-item"
@@ -33,15 +31,6 @@ class StudentUpload{
     getAllUserElement = "table > tbody > tr"
 
 
-    hoverOnMasterDROP()
-    {
-        cy.get(this.hoverOnMasterDropdown).trigger("mouseover")
-    }
-
-    clickStudentMasterOption()
-    {
-        cy.get(this.clickStudent).click()
-    }
 
     clickStudentBulkUploadButton()
     {
