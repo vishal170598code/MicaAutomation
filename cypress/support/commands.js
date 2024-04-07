@@ -47,3 +47,14 @@ Cypress.Commands.add("MasterDropdownHoverAndClick", (targetId) => {
     cy.get("#master").trigger("mouseover");
     cy.get(targetId).click()
 });
+
+// Toaster Message.
+// Cypress.Commands.add("ToasterMessage" , () => {
+//     cy.get(".toast-body").should("be.visible").invoke("text").then((text) => {
+//         cy.log("Text of the visible element :-" , text)
+//     })
+// })
+
+Cypress.Commands.add("ToasterMessage" , (Message) => {
+    cy.get(".toast-body").should("include.text" , Message)
+})

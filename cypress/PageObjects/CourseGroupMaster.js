@@ -10,7 +10,7 @@ class CourseGroupMaster{
     inputShortCourseGroupName = "#shortname"
     radioButtonIsCore = "input[value='1']"
     buttonSave = "#save"
-    commonMessage = ".toast-body"
+
 
     // SearchandDownloadExcel
     inputSearch = "input[type='search']"
@@ -67,15 +67,7 @@ class CourseGroupMaster{
         cy.get(this.buttonSave).click()
     }
 
-    successMessage()
-    {
-        cy.get(this.commonMessage)
-        .should("be.visible")
-        .invoke("text")
-        .then((text) => {
-            cy.log("Text of the visible element :-" , text)
-        })
-    }
+    
 
     // SearchandDownloadExcel
     searchRecord()

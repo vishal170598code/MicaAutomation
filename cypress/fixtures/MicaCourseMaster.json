@@ -1,0 +1,16 @@
+{
+    "NewCN" : {"NewCourseName" : "Vishal Test Course One" , "NewCredits" : 5},
+    "EditCN" : {"EditCourseName" : "Vishal Test Course One Edit" , "EditCredits" : 10},
+
+    "Message" : {
+        "Batch" : "Please Select Batch",
+        "Term" : "Please Select Term",
+        "CourseName" : "Please Enter Course Name",
+        "CourseGroup" : "Please Select Course Group",
+        "Area" : "Please Select Area",
+        "Type" : "Please Select Type",
+        "Credits" : "Please Enter Credits",
+        "SuccMess" : "Data Updated successfully"
+    }
+
+}
